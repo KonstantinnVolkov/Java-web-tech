@@ -3,7 +3,7 @@ package model.searchCriteria;
 public class SearchCriteria {
 
     public static enum Oven{
-        POWER_CONSUMPTION, WEIGHT, CAPACITY, DEPTH, HEIGHT, WIDTH
+        power_consumption, weight, capacity, depth, height, width
     }
 
     public static enum Laptop{

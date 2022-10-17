@@ -1,6 +1,15 @@
 package model;
 
-public class Refrigerator extends Appliance{
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@Builder
+@ToString
+public class Refrigerator{
 
     private int powerConsumption;
     private String filterType;
@@ -9,63 +18,14 @@ public class Refrigerator extends Appliance{
     private int motorSpeedRegulation;
     private int cleaningWidth;
 
-    public Refrigerator(String type, int powerConsumption, String filterType,
+    public Refrigerator(int powerConsumption, String filterType,
                         String bagType, String wandType,
                         int motorSpeedRegulation, int cleaningWidth) {
-        super(type);
         this.powerConsumption = powerConsumption;
         this.filterType = filterType;
         this.bagType = bagType;
         this.wandType = wandType;
         this.motorSpeedRegulation = motorSpeedRegulation;
-        this.cleaningWidth = cleaningWidth;
-    }
-
-    public int getPowerConsumption() {
-        return powerConsumption;
-    }
-
-    public void setPowerConsumption(int powerConsumption) {
-        this.powerConsumption = powerConsumption;
-    }
-
-    public String getFilterType() {
-        return filterType;
-    }
-
-    public void setFilterType(String filterType) {
-        this.filterType = filterType;
-    }
-
-    public String getBagType() {
-        return bagType;
-    }
-
-    public void setBagType(String bagType) {
-        this.bagType = bagType;
-    }
-
-    public String getWandType() {
-        return wandType;
-    }
-
-    public void setWandType(String wandType) {
-        this.wandType = wandType;
-    }
-
-    public int getMotorSpeedRegulation() {
-        return motorSpeedRegulation;
-    }
-
-    public void setMotorSpeedRegulation(int motorSpeedRegulation) {
-        this.motorSpeedRegulation = motorSpeedRegulation;
-    }
-
-    public int getCleaningWidth() {
-        return cleaningWidth;
-    }
-
-    public void setCleaningWidth(int cleaningWidth) {
         this.cleaningWidth = cleaningWidth;
     }
 }

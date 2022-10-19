@@ -7,7 +7,7 @@ import lombok.*;
 @Builder
 @ToString
 @NoArgsConstructor
-public class Oven{
+public class Oven extends Appliance{
 
     private int powerConsumption;
     private double weight;

@@ -1,30 +1,28 @@
 package model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @Builder
 @ToString
-public class Laptop {
+@NoArgsConstructor
+public class Laptop extends Appliance {
 
     private double batteryCapacity;
-    private String operatingSystem;
-    private int memoryROM;
+    private String os;
+    private int memoryRom;
     private int systemMemory;
     private double cpu;
-    private int displayInchs;
+    private int displayInches;
 
-    public Laptop(double batteryCapacity, String operatingSystem,
-                  int memoryROM, int systemMemory, double cpu, int displayInchs) {
+    public Laptop(double batteryCapacity, String os,
+                  int memoryRom, int systemMemory, double cpu, int displayInches) {
         this.batteryCapacity = batteryCapacity;
-        this.operatingSystem = operatingSystem;
-        this.memoryROM = memoryROM;
+        this.os = os;
+        this.memoryRom = memoryRom;
         this.systemMemory = systemMemory;
         this.cpu = cpu;
-        this.displayInchs = displayInchs;
+        this.displayInches = displayInches;
     }
 }

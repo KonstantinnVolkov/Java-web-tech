@@ -3,27 +3,27 @@ package model.searchCriteria;
 public class SearchCriteria {
 
     public static enum Oven{
-        power_consumption, weight, capacity, depth, height, width
+        powerConsumption, weight, capacity, depth, height, width
     }
 
     public static enum Laptop{
-        BATTERY_CAPACITY, OS, MEMORY_ROM, SYSTEM_MEMORY, CPU, DISPLAY_INCHS
+        batteryCapacity , os, memoryRom, systemMemory, cpu, displayInches
     }
 
     public static enum Refrigerator{
-        POWER_CONSUMPTION, WEIGHT, FREEZER_CAPACITY, OVERALL_CAPACITY, HEIGHT, WIDTH
+        powerConsumption, weight, freezerCapacity, overallCapacity, height, width
     }
 
     public static enum VacuumCleaner{
-        POWER_CONSUMPTION, FILTER_TYPE, BAG_TYPE, WAND_TYPE, MOTOR_SPEED_REGULATION, CLEANING_WIDTH
+        powerConsumption, filterType, bagType, wandType, motorSpeedRegulation, cleaningWidth
     }
 
     public static enum TabletPC{
-        BATTERY_CAPACITY, DISPLAY_INCHES, MEMORY_ROM, FLASH_MEMORY_CAPACITY, COLOR
+        batteryCapacity, displayInches, memoryRom, flashMemoryCapacity, color
     }
 
     public static enum Speakers{
-        POWER_CONSUMPTION, NUMBER_OF_SPEAKERS, FREQUENCY_RANGE, CORD_LENGTH
+        powerConsumption, numberOfSpeakers, frequencyRange, cordLength
     }
 
     private SearchCriteria() {}

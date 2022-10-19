@@ -1,36 +1,31 @@
 package util;
 
-import model.Oven;
-import model.searchCriteria.SearchCriteria;
+import model.*;
 
 import java.io.*;
-import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class DBLoader {
 
-    //    private static final String DB_FILEPATH = "/home/konstantin/Work/Labs/WT/lr_2/src/main/resources/appliances_db.xml";
-    private static final String DB_FILEPATH = "D:\\My_projects\\Labs\\5 sem\\WebTech\\Java-web-tech\\lr_2\\src\\main\\resources\\appliances_db.xml";
+    private static final String DB_FILEPATH = "/home/konstantin/Work/Labs/Java-web-tech/lr_2/src/main/resources/appliances_db.xml";
     private static final Path path = Paths.get(DB_FILEPATH);
+    private static HashMap<String, List<Appliance>> appliancesMap = new HashMap<>();
 
-    public static ArrayList<Object> loadAllFromDB(){
-        ArrayList<Object> allAppliances = new ArrayList<>();
-        String dbData = getAllDbData();   //read xml DB to String
-        convertToList(dbData);
-        System.out.println(1);
-        convertToList(dbData);
-
-
-
-        return allAppliances;
+    public static void loadAllFromDB(){
+        String dbData = readDataFromFile();   //read xml DB to String
+        HashMap<String, List<String>> dividedAppliances = mapStringByApplianceTypes(dbData);
+        appliancesMap.put("Oven", ApplianceFactory.createAppliances(new Oven(), dividedAppliances.get("Oven")));
+        appliancesMap.put("Laptop", ApplianceFactory.createAppliances(new Laptop(), dividedAppliances.get("Laptop")));
+        appliancesMap.put("Refrigerator", ApplianceFactory.createAppliances(new Refrigerator(), dividedAppliances.get("Refrigerator")));
+        appliancesMap.put("TablePC", ApplianceFactory.createAppliances(new TablePC(), dividedAppliances.get("TablePC")));
+        appliancesMap.put("Speakers", ApplianceFactory.createAppliances(new Speakers(), dividedAppliances.get("Speakers")));
     }
 
-    private static String getAllDbData(){
+    private static String readDataFromFile(){
         StringBuilder dbDataString = new StringBuilder();
         try(BufferedReader br = Files.newBufferedReader(path)) {
             String line;
@@ -46,67 +41,44 @@ public class DBLoader {
         }
     }
 
-    private static HashMap<String, Object> convertToList(String dbString){
-        HashMap<String, Object> appliancesList = new HashMap<>();
+    private static HashMap<String, List<String>> mapStringByApplianceTypes(String dbString){
+        HashMap<String, List<String>> dividedAppliances = new HashMap<>();
 
-        //get all ovens
-        List<String> OvenFieldsList = getAppliancePattern(new Oven()).matcher(dbString)
+        List<String> fieldsList = getAppliancePattern(new Oven()).matcher(dbString)
                 .results()
                 .map(matchResult -> matchResult.group(1))
                 .toList();
-        OvenFieldsList.forEach(s -> {
-            Oven newOven = Oven.builder()
-                    .powerConsumption(
-                            Integer.parseInt(
-                                    getParameterPattern(SearchCriteria.Oven.power_consumption.name())
-                                            .matcher(s)
-                                            .results()
-                                            .map(matchResult -> matchResult.group(1))
-                                            .collect(Collectors.joining(""))
-                            )
-                    )
-                    .build();
-            List<Field> fields = List.of(SearchCriteria.Oven.class.getFields());
+        dividedAppliances.put("Oven", fieldsList);
 
-            appliancesList.put("Oven", newOven);
-        });
+        fieldsList = getAppliancePattern(new Laptop()).matcher(dbString)
+                .results()
+                .map(matchResult -> matchResult.group(1))
+                .toList();
+        dividedAppliances.put("Laptop", fieldsList);
 
+        fieldsList = getAppliancePattern(new Refrigerator()).matcher(dbString)
+                .results()
+                .map(matchResult -> matchResult.group(1))
+                .toList();
+        dividedAppliances.put("Refrigerator", fieldsList);
 
+        fieldsList = getAppliancePattern(new TablePC()).matcher(dbString)
+                .results()
+                .map(matchResult -> matchResult.group(1))
+                .toList();
+        dividedAppliances.put("TablePC", fieldsList);
 
-
-        return appliancesList;
-    }
-
-    private static ArrayList<Oven> loadAllOvensFromDb(List<String> dbData){
-        ArrayList<Oven> ovensList = new ArrayList<>();
-
-       dbData.forEach(s -> {
-           if (s.startsWith("Oven")){
-                final List<String> fieldsData = getAppliancePattern(new Oven()).matcher(s)
-                        .results()
-                        .map(matchResult -> matchResult.group(1))
-                        .toList();
-               Oven newOven = Oven.builder()
-                       .powerConsumption(Integer.parseInt(fieldsData.get(0)))
-                       .weight(Double.parseDouble(fieldsData.get(1)))
-                       .capacity(Integer.parseInt(fieldsData.get(2)))
-                       .depth(Double.parseDouble(fieldsData.get(3)))
-                       .height(Double.parseDouble(fieldsData.get(4)))
-                       .width(Double.parseDouble(fieldsData.get(5)))
-                       .build();
-               ovensList.add(newOven);
-           }
-       });
-       return ovensList;
+        fieldsList = getAppliancePattern(new Speakers()).matcher(dbString)
+                .results()
+                .map(matchResult -> matchResult.group(1))
+                .toList();
+        dividedAppliances.put("Speakers", fieldsList);
+        return dividedAppliances;
     }
 
     private static Pattern getAppliancePattern(Object applianceClass) {
         String fullClassName = applianceClass.getClass().getName();
         String className = fullClassName.substring(fullClassName.indexOf(".") + 1);
         return Pattern.compile("<" + className + ">(.*?)</" + className + ">");
-    }
-
-    public static Pattern getParameterPattern(String parameterName) {
-        return Pattern.compile("<%s>(.*?)</%s>".formatted(parameterName, parameterName));
     }
 }

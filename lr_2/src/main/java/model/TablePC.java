@@ -1,27 +1,25 @@
 package model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @Builder
 @ToString
-public class TablePC {
+@NoArgsConstructor
+public class TablePC extends Appliance {
 
     private double batteryCapacity;
-    private int displayInchs;
-    private int memoryROM;
+    private int displayInches;
+    private int memoryRom;
     private int flashMemoryCapacity;
     private String color;
 
-    public TablePC(double batteryCapacity, int displayInchs, int memoryROM,
+    public TablePC(double batteryCapacity, int displayInches, int memoryRom,
                    int flashMemoryCapacity, String color) {
         this.batteryCapacity = batteryCapacity;
-        this.displayInchs = displayInchs;
-        this.memoryROM = memoryROM;
+        this.displayInches = displayInches;
+        this.memoryRom = memoryRom;
         this.flashMemoryCapacity = flashMemoryCapacity;
         this.color = color;
     }

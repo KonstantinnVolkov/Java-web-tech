@@ -1,15 +1,13 @@
 package model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Getter
 @Setter
 @Builder
 @ToString
-public class Speakers{
+@NoArgsConstructor
+public class Speakers extends Appliance{
 
     private int powerConsumption;
     private int numberOfSpeakers;

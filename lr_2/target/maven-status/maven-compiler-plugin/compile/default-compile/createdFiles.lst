@@ -1,0 +1,17 @@
+service/AppliancesServiceImpl.class
+service/IAppliancesService.class
+DAO/refrigeratorDAO/RefrigeratorDAOImpl.class
+Main.class
+model/Laptop.class
+model/Laptop$LaptopBuilder.class
+model/Speakers$SpeakersBuilder.class
+model/TablePC.class
+tests/TestMain.class
+model/TablePC$TablePCBuilder.class
+model/Speakers.class
+DAO/refrigeratorDAO/IRefrigeratorDAO.class
+DAO/laptopDAO/ILaptopDAO.class
+DAO/ovenDAO/IOvenDAO.class
+DAO/speakersDAO/ISpeakersDAO.class
+model/Oven$OvenBuilder.class
+model/Oven.class

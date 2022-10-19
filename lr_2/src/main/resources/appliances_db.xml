@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Appliances>
     <Oven>
-        <power_consumption>1000</power_consumption>
+        <powerConsumption>1000</powerConsumption>
         <weight>10</weight>
         <capacity>32</capacity>
         <depth>60.0</depth>
@@ -25,90 +25,90 @@
         <width>70.0</width>
     </Oven>
     <Laptop>
-        <battery_capacity>1.0</battery_capacity>
+        <batteryCapacity>1.0</batteryCapacity>
         <os>Windows</os>
-        <memory_rom>4000</memory_rom>
-        <system_memory>1000</system_memory>
+        <memoryRom>4000</memoryRom>
+        <systemMemory>1000</systemMemory>
         <cpu>1.2</cpu>
-        <display_inchs>18</display_inchs>
+        <displayInches>18</displayInches>
     </Laptop>
     <Laptop>
-        <battery_capacity>1.5</battery_capacity>
+        <batteryCapacity>1.5</batteryCapacity>
         <os>Linux</os>
-        <memory_rom>8000</memory_rom>
-        <system_memory>1000</system_memory>
+        <memoryRom>8000</memoryRom>
+        <systemMemory>1000</systemMemory>
         <cpu>2.2</cpu>
-        <display_inchs>19</display_inchs>
+        <displayInches>19</displayInches>
     </Laptop>
     <Laptop>
-        <battery_capacity>3.0</battery_capacity>
+        <batteryCapacity>3.0</batteryCapacity>
         <os>Windows</os>
-        <memory_rom>8000</memory_rom>
-        <system_memory>1500</system_memory>
+        <memoryRom>8000</memoryRom>
+        <systemMemory>1500</systemMemory>
         <cpu>3.2</cpu>
-        <display_inchs>22</display_inchs>
+        <displayInches>22</displayInches>
     </Laptop>
     <Refrigerator>
-        <power_consumption>100</power_consumption>
-        <filter_type>a</filter_type>
-        <bag_type>a2</bag_type>
-        <wand_type>all-in-one</wand_type>
-        <motor_speed_regulation>3000</motor_speed_regulation>
-        <cleaning_width>20</cleaning_width>
+        <powerConsumption>100</powerConsumption>
+        <filterType>a</filterType>
+        <bagType>a2</bagType>
+        <wandType>all-in-one</wandType>
+        <motorSpeedRegulation>3000</motorSpeedRegulation>
+        <cleaningWidth>20</cleaningWidth>
     </Refrigerator>
-    <appliance type="refrigerator">
-        <power_consumption>110</power_consumption>
-        <filter_type>b</filter_type>
-        <bag_type>aa-89</bag_type>
-        <wand_type>all-in-one</wand_type>
-        <motor_speed_regulation>2900</motor_speed_regulation>
-        <cleaning_width>25</cleaning_width>
-    </appliance>
     <Refrigerator>
-        <power_consumption>90</power_consumption>
-        <filter_type>c</filter_type>
-        <bag_type>xx00</bag_type>
-        <wand_type>all-in-one</wand_type>
-        <motor_speed_regulation>2950</motor_speed_regulation>
-        <cleaning_width>30</cleaning_width>
+        <powerConsumption>110</powerConsumption>
+        <filterType>b</filterType>
+        <bagType>aa-89</bagType>
+        <wandType>all-in-one</wandType>
+        <motorSpeedRegulation>2900</motorSpeedRegulation>
+        <cleaningWidth>25</cleaningWidth>
+    </Refrigerator>
+    <Refrigerator>
+        <powerConsumption>90</powerConsumption>
+        <filterType>c</filterType>
+        <bagType>xx00</bagType>
+        <wandType>all-in-one</wandType>
+        <motorSpeedRegulation>2950</motorSpeedRegulation>
+        <cleaningWidth>30</cleaningWidth>
     </Refrigerator>
     <TablePC>
-        <battery_capacity>3.0</battery_capacity>
-        <display_inchs>14</display_inchs>
-        <memory_rom>8000</memory_rom>
-        <flash_memory_capacity>2</flash_memory_capacity>
+        <batteryCapacity>3.0</batteryCapacity>
+        <displayInches>14</displayInches>
+        <memoryRom>8000</memoryRom>
+        <flashMemoryCapacity>2</flashMemoryCapacity>
         <color>blue</color>
     </TablePC>
     <TablePC>
-        <battery_capacity>4.0</battery_capacity>
-        <display_inchs>15</display_inchs>
-        <memory_rom>8000</memory_rom>
-        <flash_memory_capacity>6</flash_memory_capacity>
+        <batteryCapacity>4.0</batteryCapacity>
+        <displayInches>15</displayInches>
+        <memoryRom>8000</memoryRom>
+        <flashMemoryCapacity>6</flashMemoryCapacity>
         <color>red</color>
     </TablePC>
     <TablePC>
-        <battery_capacity>5.0</battery_capacity>
-        <display_inchs>16</display_inchs>
+        <batteryCapacity>5.0</batteryCapacity>
+        <displayInches>16</displayInches>
         <memory_rom>16000</memory_rom>
-        <flash_memory_capacity>8</flash_memory_capacity>
+        <flashMemoryCapacity>8</flashMemoryCapacity>
         <color>green</color>
     </TablePC>
     <Speakers>
-        <power_consumption>15</power_consumption>
-        <number_of_speakers>2</number_of_speakers>
-        <frequency_range>2-4</frequency_range>
-        <cord_length>2</cord_length>
+        <powerConsumption>15</powerConsumption>
+        <numberOfSpeakers>2</numberOfSpeakers>
+        <frequencyRange>2-4</frequencyRange>
+        <cordLength>2</cordLength>
     </Speakers>
     <Speakers>
-        <power_consumption>20</power_consumption>
-        <number_of_speakers>3</number_of_speakers>
-        <frequency_range>3-4</frequency_range>
-        <cord_length>3</cord_length>
+        <powerConsumption>20</powerConsumption>
+        <numberOfSpeakers>3</numberOfSpeakers>
+        <frequencyRange>3-4</frequencyRange>
+        <cordLength>3</cordLength>
     </Speakers>
     <Speakers>
-        <power_consumption>17</power_consumption>
-        <number_of_speakers>4</number_of_speakers>
-        <frequency_range>2-3.5</frequency_range>
-        <cord_length>4</cord_length>
+        <powerConsumption>17</powerConsumption>
+        <numberOfSpeakers>4</numberOfSpeakers>
+        <frequencyRange>2-3.5</frequencyRange>
+        <cordLength>4</cordLength>
     </Speakers>
 </Appliances>

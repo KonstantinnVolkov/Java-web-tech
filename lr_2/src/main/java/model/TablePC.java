@@ -7,6 +7,7 @@ import lombok.*;
 @Builder
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 public class TablePC extends Appliance {
 
     private double batteryCapacity;
@@ -14,13 +15,5 @@ public class TablePC extends Appliance {
     private int memoryRom;
     private int flashMemoryCapacity;
     private String color;
-
-    public TablePC(double batteryCapacity, int displayInches, int memoryRom,
-                   int flashMemoryCapacity, String color) {
-        this.batteryCapacity = batteryCapacity;
-        this.displayInches = displayInches;
-        this.memoryRom = memoryRom;
-        this.flashMemoryCapacity = flashMemoryCapacity;
-        this.color = color;
-    }
+    private double price;
 }

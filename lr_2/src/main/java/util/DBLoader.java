@@ -13,16 +13,17 @@ public class DBLoader {
 
     private static final String DB_FILEPATH = "/home/konstantin/Work/Labs/Java-web-tech/lr_2/src/main/resources/appliances_db.xml";
     private static final Path path = Paths.get(DB_FILEPATH);
-    private static HashMap<String, List<Appliance>> appliancesMap = new HashMap<>();
 
-    public static void loadAllFromDB(){
+    public static HashMap<String, List<Appliance>> loadAllFromDB(){
         String dbData = readDataFromFile();   //read xml DB to String
         HashMap<String, List<String>> dividedAppliances = mapStringByApplianceTypes(dbData);
+        HashMap<String, List<Appliance>> appliancesMap = new HashMap<>();
         appliancesMap.put("Oven", ApplianceFactory.createAppliances(new Oven(), dividedAppliances.get("Oven")));
         appliancesMap.put("Laptop", ApplianceFactory.createAppliances(new Laptop(), dividedAppliances.get("Laptop")));
         appliancesMap.put("Refrigerator", ApplianceFactory.createAppliances(new Refrigerator(), dividedAppliances.get("Refrigerator")));
         appliancesMap.put("TablePC", ApplianceFactory.createAppliances(new TablePC(), dividedAppliances.get("TablePC")));
         appliancesMap.put("Speakers", ApplianceFactory.createAppliances(new Speakers(), dividedAppliances.get("Speakers")));
+        return appliancesMap;
     }
 
     private static String readDataFromFile(){

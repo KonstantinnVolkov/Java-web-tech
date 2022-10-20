@@ -25,7 +25,7 @@ public class ApplianceFactory {
                 Class<? extends Appliance> applianceClass = newAppliance.getClass();
                 Field[] applianceFields = applianceClass.getDeclaredFields();
 
-                for (Field field: applianceFields) {    //run throught all fields and set data
+                for (Field field: applianceFields) {    //run through all fields and set data
                     field.setAccessible(true);
                     String fieldType = field.getType().getName().toUpperCase().replace(".", "");    //get name of field as string
                     FieldType emptyFieldType = FieldType.valueOf(fieldType);    //convert it to enum to be able to compare it in switch-case
@@ -60,8 +60,6 @@ public class ApplianceFactory {
                     } catch (Exception e) {
                         System.out.println("Exception in ApplianceFactory.getAppliancesOfDefinedType. Invalid datatype");
                     }
-                    System.out.println(fieldType);
-
                 }
                 appliances.add(newAppliance);
             } catch (InstantiationException | IllegalAccessException e) {
@@ -70,8 +68,6 @@ public class ApplianceFactory {
         });
         return appliances;
     }
-
-
 
     public static Pattern getParameterPattern(String parameterName) {
         return Pattern.compile("<%s>(.*?)</%s>".formatted(parameterName, parameterName));

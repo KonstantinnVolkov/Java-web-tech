@@ -7,6 +7,7 @@ import lombok.*;
 @Builder
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 public class Refrigerator extends Appliance{
 
     private int powerConsumption;
@@ -15,15 +16,5 @@ public class Refrigerator extends Appliance{
     private String wandType;
     private int motorSpeedRegulation;
     private int cleaningWidth;
-
-    public Refrigerator(int powerConsumption, String filterType,
-                        String bagType, String wandType,
-                        int motorSpeedRegulation, int cleaningWidth) {
-        this.powerConsumption = powerConsumption;
-        this.filterType = filterType;
-        this.bagType = bagType;
-        this.wandType = wandType;
-        this.motorSpeedRegulation = motorSpeedRegulation;
-        this.cleaningWidth = cleaningWidth;
-    }
+    private double price;
 }

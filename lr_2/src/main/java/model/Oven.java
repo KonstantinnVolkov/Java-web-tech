@@ -7,6 +7,7 @@ import lombok.*;
 @Builder
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 public class Oven extends Appliance{
 
     private int powerConsumption;
@@ -15,14 +16,5 @@ public class Oven extends Appliance{
     private double height;
     private double width;
     private int capacity;
-
-    public Oven(int powerConsumption, double weight,
-                double depth, double height, double width, int capacity) {
-        this.powerConsumption = powerConsumption;
-        this.weight = weight;
-        this.depth = depth;
-        this.height = height;
-        this.width = width;
-        this.capacity = capacity;
-    }
+    private double price;
 }

@@ -5,12 +5,18 @@ import model.*;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Layer for working with data
+ */
 public class ApplianceDAOImpl implements IApplianceDAO {
 
     public ApplianceDAOImpl(HashMap<String, List<Appliance>> appliances) {
         this.appliancesMap = appliances;
     }
 
+    /**
+     * Parsed DB data
+     */
     final HashMap<String, List<Appliance>> appliancesMap;
 
     @Override

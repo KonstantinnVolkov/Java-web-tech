@@ -9,11 +9,18 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Pattern;
 
+/**
+ * Class that loads XML database and parses in
+ */
 public class DBLoader {
 
     private static final String DB_FILEPATH = "/home/konstantin/Work/Labs/Java-web-tech/lr_2/src/main/resources/appliances_db.xml";
     private static final Path path = Paths.get(DB_FILEPATH);
 
+    /**
+     * Method that loads db
+     * @return HashMap (Key, Value) = (ApplianceType, List of appliances)
+     */
     public static HashMap<String, List<Appliance>> loadAllFromDB(){
         String dbData = readDataFromFile();   //read xml DB to String
         HashMap<String, List<String>> dividedAppliances = mapStringByApplianceTypes(dbData);
@@ -26,6 +33,9 @@ public class DBLoader {
         return appliancesMap;
     }
 
+    /**
+     * @return String of data, read from XML
+     */
     private static String readDataFromFile(){
         StringBuilder dbDataString = new StringBuilder();
         try(BufferedReader br = Files.newBufferedReader(path)) {
@@ -42,6 +52,10 @@ public class DBLoader {
         }
     }
 
+    /**
+     * @param dbString - parameter with all DB data
+     * @return HashMap where (Key, Value) = (Appliance type, Stringified appliance data)
+     */
     private static HashMap<String, List<String>> mapStringByApplianceTypes(String dbString){
         HashMap<String, List<String>> dividedAppliances = new HashMap<>();
 

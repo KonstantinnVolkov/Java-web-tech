@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+/**
+ * enum used in
+ * @see ApplianceFactory createAppliances
+ * to define field datatype
+ */
 enum FieldType {
     INT("INT"), DOUBLE("DOUBLE"), JAVALANGSTRING("JAVALANGSTRING");
 
@@ -17,6 +22,11 @@ enum FieldType {
 
 public class ApplianceFactory {
 
+    /**
+     * @param appliance - type of object, which instances has to be created
+     * @param typedAppliances - list of stringified data of objects of appliance type
+     * @return List<Appliance> appliances - List of objects created in factory stored as superclass
+     */
     public static List<Appliance> createAppliances(Appliance appliance, List<String> typedAppliances){
         List<Appliance> appliances = new ArrayList<>();
         typedAppliances.forEach(s -> {
@@ -69,6 +79,10 @@ public class ApplianceFactory {
         return appliances;
     }
 
+    /**
+     * @param parameterName - name of object field (the same as in XML doc)
+     * @return compiled pattern
+     */
     public static Pattern getParameterPattern(String parameterName) {
         return Pattern.compile("<%s>(.*?)</%s>".formatted(parameterName, parameterName));
     }

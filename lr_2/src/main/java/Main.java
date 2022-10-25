@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args){
         Main main = new Main(new ApplianceDAOImpl(DBLoader.loadAllFromDB()));
-        main.applianceDAO.findAllAppliancesByType("Oven")
+        main.applianceDAO.findAllAppliancesByType("Laptop")
                 .forEach(appliance -> System.out.println("appliance = " + appliance));
         System.out.println(main.applianceDAO.findCheapest());
     }

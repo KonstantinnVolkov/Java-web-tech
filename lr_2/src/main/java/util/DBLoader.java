@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class DBLoader {
 
-    private static final String DB_FILEPATH = "/home/konstantin/Work/Labs/Java-web-tech/lr_2/src/main/resources/appliances_db.xml";
+    private static final String DB_FILEPATH = "./src/main/resources/appliances_db.xml";
     private static final Path path = Paths.get(DB_FILEPATH);
 
     /**

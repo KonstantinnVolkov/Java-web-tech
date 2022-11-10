@@ -15,6 +15,6 @@ public class Main {
         Main main = new Main(new ApplianceDAOImpl(DBLoader.loadAllFromDB()));
         main.applianceDAO.findAllAppliancesByType("Laptop")
                 .forEach(appliance -> System.out.println("appliance = " + appliance));
-        System.out.println(main.applianceDAO.findCheapest());
+        System.out.println(main.applianceDAO.findMostExpensive());
     }
 }

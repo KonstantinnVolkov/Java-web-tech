@@ -20,7 +20,7 @@ public class ApplianceDAOImpl implements IApplianceDAO {
     final HashMap<String, List<Appliance>> appliancesMap;
 
     @Override
-    public Appliance findCheapest() {
+    public Appliance findMostExpensive() {
         var ref = new Object() {
             double maxPrice = 0d;
             Appliance cheapestAppliance = null;

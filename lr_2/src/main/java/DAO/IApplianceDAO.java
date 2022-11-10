@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IApplianceDAO {
 
-    Appliance findCheapest();
+    Appliance findMostExpensive();
 
     List<Appliance> findAllAppliancesByType(String type);
 }

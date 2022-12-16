@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="lr_4">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.43">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>mdy</DateStyle>
       <Grants>1||-9223372036854775808|c|G
@@ -1408,12 +1408,6 @@ false posixrules
 14007||10|U|G</Grants>
       <IntrospectionStateNumber>2996</IntrospectionStateNumber>
       <ObjectId>21432</ObjectId>
-      <Relations>sequence|table|21487|21488|1
-sequence|table|21540|21541|1
-sequence|table|21516|21517|1
-sequence|table|21523|21524|1
-sequence|table|21560|21561|1
-</Relations>
       <OwnerName>postgres</OwnerName>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -4856,31 +4850,31 @@ sequence|table|21560|21561|1
       <OwnerName>postgres</OwnerName>
     </schema>
     <sequence id="266" parent="265" name="booking_booking_id_seq">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <ObjectId>21523</ObjectId>
       <StateNumber>2887</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="267" parent="265" name="role_role_id_seq">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <ObjectId>21540</ObjectId>
       <StateNumber>2898</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="268" parent="265" name="room_room_id_seq">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <ObjectId>21516</ObjectId>
       <StateNumber>2886</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="269" parent="265" name="room_type_room_type_id_seq">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <ObjectId>21560</ObjectId>
       <StateNumber>2908</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="270" parent="265" name="users_user_id_seq">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <ObjectId>21487</ObjectId>
       <StateNumber>2883</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4928,22 +4922,23 @@ sequence|table|21560|21561|1
       <OwnerName>postgres</OwnerName>
     </table>
     <column id="278" parent="271" name="booking_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;booking_booking_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>2887</StateNumber>
+      <SequenceId>21523</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="279" parent="271" name="customer_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2887</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="280" parent="271" name="booked_room_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>2887</StateNumber>
@@ -4988,15 +4983,16 @@ sequence|table|21560|21561|1
       <UnderlyingIndexId>21528</UnderlyingIndexId>
     </key>
     <column id="285" parent="272" name="role_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;role_role_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>2898</StateNumber>
+      <SequenceId>21540</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="286" parent="272" name="role_name">
-      <DataType>varchar(20)|0s</DataType>
+      <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2898</StateNumber>
@@ -5019,22 +5015,23 @@ sequence|table|21560|21561|1
       <UnderlyingIndexId>21545</UnderlyingIndexId>
     </key>
     <column id="289" parent="273" name="room_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;room_room_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>2886</StateNumber>
+      <SequenceId>21516</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="290" parent="273" name="floor">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>2886</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="291" parent="273" name="price">
-      <DataType>double precision|0s</DataType>
+      <DasType>double precision|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>2886</StateNumber>
@@ -5057,15 +5054,16 @@ sequence|table|21560|21561|1
       <UnderlyingIndexId>21521</UnderlyingIndexId>
     </key>
     <column id="294" parent="274" name="room_type_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;room_type_room_type_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>2908</StateNumber>
+      <SequenceId>21560</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="295" parent="274" name="type_name">
-      <DataType>varchar(30)|0s</DataType>
+      <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2977</StateNumber>
@@ -5103,14 +5101,14 @@ sequence|table|21560|21561|1
       <UnderlyingIndexId>21567</UnderlyingIndexId>
     </key>
     <column id="300" parent="275" name="room_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>2910</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="301" parent="275" name="room_type_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2910</StateNumber>
@@ -5139,14 +5137,14 @@ sequence|table|21560|21561|1
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <column id="304" parent="276" name="user_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>2900</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="305" parent="276" name="role_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2900</StateNumber>
@@ -5175,36 +5173,37 @@ sequence|table|21560|21561|1
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <column id="308" parent="277" name="user_id">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;users_user_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>2883</StateNumber>
+      <SequenceId>21487</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="309" parent="277" name="name">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>2883</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="310" parent="277" name="surname">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
       <StateNumber>2883</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="311" parent="277" name="email">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <StateNumber>2883</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="312" parent="277" name="password">
-      <DataType>varchar(256)|0s</DataType>
+      <DasType>varchar(256)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
       <StateNumber>2883</StateNumber>

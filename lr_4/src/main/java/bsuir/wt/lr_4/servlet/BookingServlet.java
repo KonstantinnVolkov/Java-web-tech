@@ -34,4 +34,8 @@ public class BookingServlet extends HttpServlet {
         bookingService.saveNewBooking(customerId, roomId);
         resp.sendRedirect("/roomCatalog");
     }
+
+    public static void main(String[] args) {
+        System.out.println("hello world");
+    }
 }
